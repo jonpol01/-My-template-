@@ -3,7 +3,7 @@
 	Created by John Paul Soliva on 8/20/16.
 	Copyright © 2016 Soliva John Paul. All rights reserved.
 
-	
+
 ***************************************************************/
 #include <iostream>
 
@@ -20,7 +20,7 @@ void boardgameCounter(int i_Tiles , short int i_cntArray[] , int i_len , int i_m
 		//debugger
 		//for( int j = 0 ; j < len ; j++ )    cout << a[ j ] << "," ;
 		//cout << endl;
-		
+
 		//Count each succesfull combination
 		ul_Combi++;										//Each successful combination we increase by 1
 

@@ -125,7 +125,7 @@ void listTree(node *aNode, int i_dir) {
 
 	// Print the value of the node we are at and every time we move
 	// back up
-	cout << aNode->value;ss
+	cout << aNode->value;
 	if (i_dir == 1) cout << "\t --left node";
 	else if(i_dir == 2)cout << "\t --right node";
 	else cout << "\t --ROOT";
