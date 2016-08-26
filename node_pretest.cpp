@@ -20,8 +20,7 @@ struct node {
 };
 
 // Prototypes
-bool isPrime(int);
-void addToTree(node*&, node*);
+void commitToTree(node*&, node*);
 void listTree(node*, int);
 
 static int i_left, i_right = 1;
@@ -51,7 +50,7 @@ int main() {
 		//Even or Odd or Prime number
 		node *valveItem = new node();
 		valveItem->value = r;
-		addToTree(valveTree,valveItem);
+		commitToTree(valveTree,valveItem);
 
 		i++;
 		if (i_left >= i_maxDepth & i_right >= i_maxDepth) {
@@ -81,8 +80,8 @@ int main() {
 	return 0;
 }
 
-// In charage of adding a node item to our specific trees.
-void addToTree(node *&tree, node *item) {
+// Adding a node to a tree.
+void commitToTree(node *&tree, node *item) {
 	if (tree == NULL) {
 		// If no root in the tree, make it the first.
 		tree = item;

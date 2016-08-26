@@ -10,7 +10,7 @@
 using namespace std;
 
 //Max faces of our dice
-#define DICE_FACES	6									
+#define DICE_FACES	6
 
 unsigned long long ul_Combi = 0;
 short int i_cntArray[1024];		//Combination array container
@@ -25,7 +25,7 @@ void boardgameCounter(int i_Tiles , short int i_cntArray[] , int i_len , int i_m
 
 		//Count each succesfull combination
 		//Each successful combination we increase by 1
-		ul_Combi++;										
+		ul_Combi++;
 
 		return;
 	}
@@ -46,10 +46,10 @@ int main(int argc, char *argv[]){
 	}
 
 	//User input of a board game steps
-	short int i_boardTiles = (atoi(argv[1]));					
+	short int i_boardTiles = (atoi(argv[1]));
 
 	//initiate combinations counter
-	boardgameCounter(i_boardTiles, i_cntArray, 0, 1);	
+	boardgameCounter(i_boardTiles, i_cntArray, 0, 1);
 	cout << "Maximum spaces: " << i_boardTiles << endl;
 	cout << "combinations: " << ul_Combi << " counts" << "\n-------------------------------------------\n" << endl;				//print an End with a total number of steps acquired
 	return 0;
