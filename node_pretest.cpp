@@ -1,9 +1,9 @@
 /**************************************************************
-    08/26/2016      node_pretest.cpp
-    Created by John Paul Soliva on 8/20/16.
-    Copyright © 2016 Soliva John Paul. All rights reserved.
+	08/26/2016      node_pretest.cpp
+	Created by John Paul Soliva on 8/20/16.
+	Copyright © 2016 Soliva John Paul. All rights reserved.
 
-    
+
 ***************************************************************/
 #include <iostream>
 #include <vector>
@@ -39,7 +39,7 @@ int main() {
 	node *eventree = NULL;				//even	-unimplemented
 	node *oddtree = NULL;				//odd	-unimplemented
 	node *primetree = NULL;				//Prime	-unimplemented
-    node *valveTree = NULL;
+	node *valveTree = NULL;
 	// Seed our random number generator
 	srand((int)time(NULL));
 
@@ -47,12 +47,12 @@ int main() {
 		// Get a random number
 		r = rand() % 100 + 1;
 
-        //Inherit all value to a node regardless of it is an
-        //Even or Odd or Prime number
+		//Inherit all value to a node regardless of it is an
+		//Even or Odd or Prime number
 		node *valveItem = new node();
 		valveItem->value = r;
 		addToTree(valveTree,valveItem);
-        		
+
 		i++;
 		if (i_left >= i_maxDepth & i_right >= i_maxDepth) {
 			i_left = i_right = 0;
@@ -64,7 +64,7 @@ int main() {
 	myforrestvector.push_back(valveTree);
 	myforrestvector.push_back(eventree);				//-unimplemented
 	myforrestvector.push_back(oddtree);					//-unimplemented
-	
+
 	// Create an iterator of type node*
 	vector<node*>::iterator iterate;
 
@@ -86,7 +86,7 @@ void addToTree(node *&tree, node *item) {
 	if (tree == NULL) {
 		// If no root in the tree, make it the first.
 		tree = item;
-        cout << "root: " << item->value << "\n" << endl;
+		cout << "root: " << item->value << "\n" << endl;
 		if(item->value <= 1) return;
 	}
 	else {
@@ -117,7 +117,7 @@ void addToTree(node *&tree, node *item) {
 
 // Print out a given tree using recursion
 void listTree(node *aNode, int i_dir) {
-	
+
 	// Recurse down left node till we hit bottom leaf
 	if (aNode->left != NULL) {
 		listTree(aNode->left, 1);
@@ -130,7 +130,7 @@ void listTree(node *aNode, int i_dir) {
 	else if(i_dir == 2)cout << "\t --right node";
 	else cout << "\t --ROOT";
 	cout << endl;
-	
+
 	// Traverse down the right branch now recursively
 	if (aNode->right != NULL) {
 		listTree(aNode->right, 2);
