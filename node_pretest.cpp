@@ -100,16 +100,12 @@ void addToTree(node *&tree, node *item) {
 			// If it is null, we place the new node there. Otherwise we set the
 			// current node to the left branch and go back through the loop.
 			if (item->value < temp->value && i_left <= 3) {
-//			if (item->value < temp->value) {
 				if (temp->left == NULL) { temp->left = item; flag = true; ++i_left; }
 				else { temp = temp->left; }
-//                cout << "left: " << i_left << endl;
 			}
 			else if (item->value > temp->value && i_right <= 3) {
-//			else if (item->value > temp->value) {
 				if (temp->right == NULL) { temp->right = item; flag = true; ++i_right; }
 				else { temp = temp->right; }
-//                cout << "right: " << i_right << endl;
 			}
 			else {
 				// The node value was the same as an current node, so dump it.
