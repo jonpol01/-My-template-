@@ -12,6 +12,7 @@ using namespace std;
 #define DICE_FACES	6									//Max faces of our dice
 
 unsigned long long ul_Combi = 0;
+short int i_cntArray[1024];							//Combination array container
 
 //Board game combination counter
 void boardgameCounter(int i_Tiles , short int i_cntArray[] , int i_len , int i_minValue ){
@@ -36,9 +37,16 @@ void boardgameCounter(int i_Tiles , short int i_cntArray[] , int i_len , int i_m
 }
 
 int main(int argc, char *argv[]){
-	short int i_cntArray[1024];							//Combination array container
-	int i_boardTiles = atoi(argv[1]);					//User input of board game steps
+	//Empty input checker
+	if(argc < 2 || ) {
+		cout << "error: Missing input!\n" << "Usage: ./<filename><space><number of steps>\n-------------------------------------------" << endl << endl;
+		return 1;
+	}
+
+	short int i_boardTiles = (atoi(argv[1]));					//User input of a board game steps
+
 	boardgameCounter(i_boardTiles, i_cntArray, 0, 1);	//initiate combinations counter
-	cout << "End\n" << ul_Combi << endl;				//print an End with a total number of steps acquired
+	cout << "Maximum spaces: " << i_boardTiles << endl;
+	cout << "combinations: " << ul_Combi << " counts" << "\n-------------------------------------------\n" << endl;				//print an End with a total number of steps acquired
 	return 0;
 }

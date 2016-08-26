@@ -62,8 +62,8 @@ int main() {
 
 	// Build our forrest by pushing the tree roots onto our vector
 	myforrestvector.push_back(valveTree);
-	myforrestvector.push_back(eventree);				//-unimplemented
-	myforrestvector.push_back(oddtree);					//-unimplemented
+	//myforrestvector.push_back(eventree);				//-unimplemented
+	//myforrestvector.push_back(oddtree);				//-unimplemented
 
 	// Create an iterator of type node*
 	vector<node*>::iterator iterate;
@@ -72,7 +72,7 @@ int main() {
 	// we continue until we hit the end of the vector. Each item in our forrest
 	// is a special binary tree.
 	for (iterate = myforrestvector.begin(); iterate != myforrestvector.end(); iterate++) {
-		cout << "listing Nodes inorder..." << endl << "---------------------" << endl;
+		cout << "\nlisting random Nodes inorder..." << endl << "---------------------" << endl;
 		// Dereference the root and give the pointer to a tree root to printTree
 		listTree((*iterate) , 0);
 		cout  <<  "-----End of list-----" << endl << endl;
@@ -86,7 +86,6 @@ void addToTree(node *&tree, node *item) {
 	if (tree == NULL) {
 		// If no root in the tree, make it the first.
 		tree = item;
-		cout << "root: " << item->value << "\n" << endl;
 		if(item->value <= 1) return;
 	}
 	else {

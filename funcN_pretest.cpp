@@ -34,8 +34,13 @@ int main(int argc, char *argv[]){
 
 	float i_nval = 0;                           //final value container
 
+	if(argc < 2) {
+		cout << "error: Missing input!\n" << "Usage: ./<filename><space><n>\n-------------------------------------------" << endl << endl;
+		return 1;
+	}
+
 	i_nval = FIND.N(atoi(argv[1]));             //get the output value from our N finder and pass it to i_nval
 	cout << "f(n) = f(n-1) + f(n-2)" << endl;
-	cout << "f(" << argv[1] << ") = "<< i_nval << endl;
+	cout << "f(" << argv[1] << ") = "<< i_nval << "\n-------------------------------------------\n" << endl;
 	return 0;
 }
