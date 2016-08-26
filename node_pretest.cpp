@@ -23,7 +23,7 @@ struct node {
 bool isPrime(int);
 void addToTree(node*&, node*);
 void listTree(node*, int);
-void drawTree(node*);
+
 static int i_left, i_right = 1;
 
 int main() {
@@ -51,7 +51,6 @@ int main() {
         //Even or Odd or Prime number
 		node *valveItem = new node();
 		valveItem->value = r;
-        //cout << valveItem->value << ", " << endl;
 		addToTree(valveTree,valveItem);
         		
 		i++;
@@ -63,7 +62,9 @@ int main() {
 
 	// Build our forrest by pushing the tree roots onto our vector
 	myforrestvector.push_back(valveTree);
-
+	myforrestvector.push_back(eventree);				//-unimplemented
+	myforrestvector.push_back(oddtree);					//-unimplemented
+	
 	// Create an iterator of type node*
 	vector<node*>::iterator iterate;
 
@@ -128,7 +129,6 @@ void listTree(node *aNode, int i_dir) {
 
 	// Print the value of the node we are at and every time we move
 	// back up
-
 	cout << aNode->value;
 	if (i_dir == 1) cout << "\t --left node";
 	else if(i_dir == 2)cout << "\t --right node";
@@ -139,17 +139,4 @@ void listTree(node *aNode, int i_dir) {
 	if (aNode->right != NULL) {
 		listTree(aNode->right, 2);
 	}
-}
-
-void drawTree(node *aNode){
-	cout << aNode->value << ", ";
-
-	if (aNode->left != NULL) {
-		drawTree(aNode->left);
-	}
-
-	if (aNode->right != NULL) {
-		drawTree(aNode->right);
-	}
-
 }
