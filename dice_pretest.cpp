@@ -32,16 +32,20 @@ void boardgameCounter(int i_Tiles , short int i_cntArray[] , int i_len , int i_m
 
 	//Combination finder
 	for(int i = i_minValue ; i <= i_Tiles ; i++){
-		i_cntArray[i_len] = i;							//fill our combination container
-		boardgameCounter(i_Tiles - i , i_cntArray , i_len + 1 , i );	//permutation
-		if(i >= DICE_FACES) break;						//break if our loop reach our dice max number faces
+		//fill our combination container
+		//and break if our loop reach our dice max number faces
+		i_cntArray[i_len] = i;
+		boardgameCounter(i_Tiles - i , i_cntArray , i_len + 1 , i );//permutation
+		if(i >= DICE_FACES) break;
 	}
 }
 
 int main(int argc, char *argv[]){
 	//Empty input checker
-	if(argc < 2 || ) {
-		cout << "error: Missing input!\n" << "Usage: ./<filename><space><number of steps>\n-------------------------------------------" << endl << endl;
+	if(argc < 2) {
+		cout << "error: Missing input!\n";
+		cout << "Usage: ./<filename><space><number of steps>";
+		cout << "\n-------------------------------------------" << endl << endl;
 		return 1;
 	}
 
@@ -50,7 +54,9 @@ int main(int argc, char *argv[]){
 
 	//initiate combinations counter
 	boardgameCounter(i_boardTiles, i_cntArray, 0, 1);
-	cout << "Maximum spaces: " << i_boardTiles << endl;
-	cout << "combinations: " << ul_Combi << " counts" << "\n-------------------------------------------\n" << endl;				//print an End with a total number of steps acquired
+	cout << "Number of spaces: " << i_boardTiles << endl;
+	cout << "combinations: " << ul_Combi << " counts" ;
+	//print an End with a total number of steps acquired
+	cout << "\n-------------------------------------------\n" << endl;
 	return 0;
 }

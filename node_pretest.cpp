@@ -10,8 +10,6 @@
 #include <time.h>
 using namespace std;
 
-const int i_maxDepth = 3;
-
 // Structure of our node
 struct node {
 	int value;
@@ -23,13 +21,16 @@ struct node {
 void commitToTree(node*&, node*);
 void listTree(node*, int);
 
+const int i_maxDepth = 3;
 static int i_left, i_right = 1;
 
 int main() {
 	// First create our forrest vector to hold our trees
+	// Multiple trees by vectoring
 	vector<node*> myforrestvector;
 
-	// Two variables, i is for our loop and r is for our random number
+	// Two variables
+	// i is for our loop and r is for our random number
 	int i = 0;
 	int r = 0;
 

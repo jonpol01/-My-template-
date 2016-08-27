@@ -43,7 +43,8 @@ int main(int argc, char *argv[]){
 	//Empty input checker
 	if(argc < 2) {
 		cout << "error: Missing input!\n";
-		cout << "Usage: ./<filename><space><n>\n-------------------------------------------" << endl << endl;
+		cout << "Usage: ./<filename><space><n>";
+		cout << "\n-------------------------------------------" << endl << endl;
 		return 1;
 	}
 
@@ -51,6 +52,7 @@ int main(int argc, char *argv[]){
 	//and pass it to i_nval then print
 	i_nval = FIND.N(atoi(argv[1]));
 	cout << "f(n) = f(n-1) + f(n-2)" << endl;
-	cout << "f(" << argv[1] << ") = "<< i_nval << "\n-------------------------------------------\n" << endl;
+	cout << "f(" << argv[1] << ") = " << i_nval;
+	cout << "\n-------------------------------------------\n" << endl;
 	return 0;
 }
